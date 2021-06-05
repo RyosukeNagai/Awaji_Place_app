@@ -1,5 +1,5 @@
 <div class="admin-posts-new">
-  <h2>Blog編集</h2>
+  <h2>Blogの編集</h2>
   <%= form_with(url: admin_post_path, model: @post, method: :patch, local: true) do |f| %>
 
   <% if @post.errors.any? %>
@@ -11,8 +11,8 @@
       <% end %>
     </ul>
   </div>
-    <% end %>
-  
+  <% end %>
+
 
   <div class="row" style="margin: 10px;">
     <div class="col-lg-6 admin-posts-new__title">
@@ -82,16 +82,17 @@
     </div>
     <div class="col-lg-6">
       <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-          <%= tag.label class: 'form-check-label' do %>
-            <div><%= tag.check_box class: 'form-check-input' %></div>
-            <%= tag.text %>
-          <% end %>
+      <%= tag.label class: 'form-check-label' do %>
+      <div><%= tag.check_box class: 'form-check-input' %></div>
+      <%= tag.text %>
+      <% end %>
       <% end %>
     </div>
   </div>
 
+
   <div>
-    <%= f.submit "編集の完了", class:"btn btn-outline-success" %>
+    <%= f.submit "編集の完了", class:"btn btn-outline-primary" %>
   </div>
 
   <% end %>
