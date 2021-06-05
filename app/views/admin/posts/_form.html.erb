@@ -1,0 +1,97 @@
+  <%= form_with(url: admin_posts_path, model: @post, local: true) do |f| %>
+
+  <% if @post.errors.any? %>
+  <div class="posts-error">
+    <h3><%= @post.errors.count %>eroor</h3>
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+    <% end %>
+  
+
+  <div class="row" style="margin: 10px;">
+    <div class="col-lg-6 admin-posts-new__title">
+      <p><%= f.label :title, 'タイトル　' %><span>必須</span></p>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_field :title, class: "admin-posts-new__form", placeholder: "#1 title" %>
+    </div>
+  </div>
+
+  <div class="row" style="margin: 10px;">
+    <div class="col-lg-12 admin-posts-new__title">
+      <%= f.attachment_field :image %>
+    </div>
+    <div class="col-lg-12">
+      <img id="preview" class="preview" style="margin-left: 15%">
+    </div>
+  </div>
+  <div class="row" style="margin: 10px;">
+    <div class="col-lg-6 admin-posts-new__title">
+      <p><%= f.label :body, '本文　' %><span>必須</span></p>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_area :body, class: "admin-posts-new__forms" , placeholder: "◯◯がオススメです。"%>
+    </div>
+  </div>
+
+  <div class="row" style="margin: 10px;">
+    <div class="col-lg-6 admin-posts-new__title">
+      <p><%= f.label :shop_name, 'Shop_Name　' %><span>必須</span></p>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_field :shop_name, class: "admin-posts-new__form", placeholder: "◯◯Cafe" %>
+    </div>
+  </div>
+
+  <div class="row" style="margin: 10px;">
+    <div class="col-lg-6 admin-posts-new__title">
+      <p><%= f.label :business_hours, '営業時間' %></p>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_field :business_hours, class: "admin-posts-new__form" , placeholder: "◯◯〜◯◯" %>
+    </div>
+  </div>
+
+  <div class="row" style="margin: 10px;">
+    <div class="col-lg-6 admin-posts-new__title">
+      <p><%= f.label :address, '住所' %></p>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_field :address, class: "admin-posts-new__form" , placeholder: "◯◯市" %>
+    </div>
+  </div>
+
+  <div class="row" style="margin: 10px;">
+    <div class="col-lg-6 admin-posts-new__title">
+      <p><%= f.label :url, 'HP_URL' %></p>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_field :url, class: "admin-posts-new__form" , placeholder: "https://~"%>
+    </div>
+  </div>
+
+  <div class="row" style="margin: 10px;">
+    <div class="col-lg-6 admin-posts-new__title">
+      <p>タグ</p>
+    </div>
+    <div class="col-lg-6">
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+          <%= tag.label class: 'form-check-label' do %>
+            <div><%= tag.check_box class: 'form-check-input' %></div>
+            <%= tag.text %>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit "新規登録", class:"btn btn-outline-primary" %>
+  </div>
+
+  <% end %>
+  <div style="margin: 10px 0px 50px 0px">
+    <%= link_to "投稿一覧",admin_posts_path %>
+  </div>

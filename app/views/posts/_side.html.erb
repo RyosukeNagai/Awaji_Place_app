@@ -1,0 +1,56 @@
+<div class="sidebar">
+  <p>
+    【 Awaji_Place Blog 】<br>
+    私の出身地である兵庫県の魅力をもっと多くの人に伝えたいと思いこのサイトを作りました。<br>
+    by Ryo
+  </p>
+  <ul>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-instagram-square"></i>
+  </ul><br>
+  <div class="sidebar__link"><a href="/" style="">> HOME</a></div>
+  <div class="sidebar__link"><a href="" style="">> NEWS</a></div>
+  <div class="sidebar__link"><a href="" style="">> プロフィールを見る</a></div><br>
+  <div class="sidebar__link">> 画像一覧</div>
+  <div class="sidebar-image">
+    <% @posts.each do |post| %>
+    <div class="sidebar-image__contant">
+      <!-- 4つごとに折り返し-->
+      <%= link_to post_path(post) do %>
+      <%= attachment_image_tag post, :image, format:"jpg",fallback:"top_page.jpg", class:"sidebar-image__img" %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <div class="sidebar__contant">
+    タグで検索
+    <%= form_tag root_path, method: :get, class: 'posts__searchForm',style: 'margin-bottom: 5px;' do %>
+      <%= select_tag :tag_id,
+                  options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+                  {
+                    prompt: 'タグで絞り込み',
+                    class: 'posts__select',
+                    onchange: 'submit(this.form);'
+                  }
+      %>
+    <% end %>
+  </div>
+  <div class="sidebar__contant">
+    カテゴリー
+  </div>
+  <div class="sidebar__contant">
+    最新の記事
+  </div>
+  <% @posts.each do |post| %>
+  <div class="sidebar__article">
+    <!-- 4つごとに折り返し-->
+    <%= link_to post_path(post) do %>
+    <p><%= post.title %></p>
+    <p><%= post.created_at.strftime('%Y年/%m月/%d日') %></p>
+    <% end %>
+    <div style="margin-bottom: 5px;"></div>
+    <% end %>
+  </div>
+    <div class="sidebar__contant">最新のコメント</div>
+</div>

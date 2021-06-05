@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="posts-show">
+        <p><%= @post.title %></p>
+        <p><%= @post.created_at.strftime('%Y年/%m月/%d日') %></p>
+        <%= attachment_image_tag @post, :image, format:"jpg",
+				fallback:"top_page.jpg", class:"product-show" %>
+        <p><%= @post.body %></p>
+        <p>
+          <span><　</span><%= @post.shop_name %><span>　></span>
+        </p>
+        <p><%= @post.business_hours %></p>
+        <p><%= @post.address %></p>
+        <p><%= @post.url %></p>
+        <p>
+        <% @post.tags.each do |tag| %>
+          <p class="badge badge-secondary" style="padding: 5px;">#<%= tag.name %></p>
+        <% end %>
+        </p>
+
+        <%= link_to edit_admin_post_path(params[:id]) do %>
+          <span class="btn btn-outline-success" ,style="">編集</span>
+        <% end %>
+        <%= link_to "削除する",admin_post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},class: "btn btn-outline-danger" %>
+
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <%= render "admin/posts/side", posts: @posts %>
+    </div>
+  </div>
+</div>

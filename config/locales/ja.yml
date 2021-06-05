@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      post:
+        title: タイトル
+        shop_name: ショップ名
+        body: 本文
