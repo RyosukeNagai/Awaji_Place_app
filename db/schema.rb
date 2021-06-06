@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_154316) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "genre_id"
     t.string "title"
     t.string "shop_name"
     t.string "business_hours"

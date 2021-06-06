@@ -13,7 +13,9 @@
         <p><%= @post.business_hours %></p>
         <p><%= @post.address %></p>
         <p><%= @post.url %></p>
+        <p class="posts-show__title">Genre　</p><p class="badge badge-warning" style="padding: 5px;"><%= @post.genre.name %></p>
         <p>
+        <p class="posts-show__title">Tags　</p>
         <% @post.tags.each do |tag| %>
           <p class="badge badge-secondary" style="padding: 5px;">#<%= tag.name %></p>
         <% end %>

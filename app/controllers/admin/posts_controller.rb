@@ -16,11 +16,13 @@ class Admin::PostsController < ApplicationController
   def index
     @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
     @posts = @posts.order(created_at: :desc)
+    @genres = Genre.all
   end
 
   def show
     @posts = Post.all.order(created_at: :desc)
     @post = Post.find(params[:id])
+    @genres = Genre.all
   end
 
   def edit
@@ -42,7 +44,7 @@ class Admin::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :image, :body, :shop_name, :address, :url, :business_hours, tag_ids: [])
+    params.require(:post).permit(:title, :image, :body, :shop_name, :address, :url, :business_hours, :genre_id, tag_ids: [])
   end
 
 end
