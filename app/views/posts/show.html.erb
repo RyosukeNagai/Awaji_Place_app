@@ -4,8 +4,7 @@
       <div class="posts-show">
         <p><%= @post.title %></p>
         <p><%= @post.created_at.strftime('%Y年/%m月/%d日') %></p>
-        <%= attachment_image_tag @post, :image, format:"jpg",
-				fallback:"top_page.jpg", class:"product-show" %>
+        <%= attachment_image_tag @post, :image, fallback:"no_image.JPG", class:"product-show" %>
         <p><%= @post.body %></p>
         <p><span>
             <span><　</span><%= @post.shop_name %><span>　></span></p>

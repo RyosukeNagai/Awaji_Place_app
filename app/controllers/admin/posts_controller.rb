@@ -15,7 +15,7 @@ class Admin::PostsController < ApplicationController
 
   def index
     @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
-    @posts = @posts.order(created_at: :desc)
+    @posts = @posts.page(params[:page]).per(4).order(created_at: :desc)
     @genres = Genre.all
   end
 
