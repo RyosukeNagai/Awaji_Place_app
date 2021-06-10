@@ -24,3 +24,14 @@ $(function() {
   reader.readAsDataURL(e.target.files[0]);
 });
 });
+
+$(function() {
+  $(".posts__image").hover(
+    function() {
+      $(this).addClass("zoom");
+    },
+    function() {
+      $(this).removeClass("zoom");
+    }
+  );
+});

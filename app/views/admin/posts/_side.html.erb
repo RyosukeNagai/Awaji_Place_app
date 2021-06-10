@@ -1,21 +1,31 @@
 <div class="sidebar">
   <p>
-    【 Awaji_Place Blog 】<br>
-    私の出身地である兵庫県の魅力をもっと多くの人に伝えたいと思いこのサイトを作りました。<br>
+    <span style="font-size: 13px;">【 Awaji_Place Blog 】</span><br>
+    どうも！管理人のRyoです。この度私の出身地である淡路島の魅力をもっと多くの人に伝えたいと思いこのサイトを作りました。淡路島にあるナイスなSpotを中心に紹介しますが、兵庫県全体を紹介できたらなと思っています。よろしくお願いします!😄<br>
     by Ryo
   </p>
+
   <ul>
     <i class="fab fa-twitter"></i>
-    <i class="fab fa-facebook"></i>
     <i class="fab fa-instagram-square"></i>
+    <i class="fab fa-facebook"></i>
   </ul><br>
-  <div class="sidebar__link"><%= link_to "_ Home", admin_posts_path %></div>
+  <div class="sidebar__link"><%= link_to "_ HOME", admin_posts_path %></div>
   <div class="sidebar__link"><%= link_to "_ BLOG投稿", new_admin_post_path %></div>
   <div class="sidebar__link"><%= link_to "_ GENRE作成", admin_genres_path %></div>
   <div class="sidebar__link"><%= link_to "_ TAG作成", admin_tags_path %></div>
   <div class="sidebar__link"><%= link_to "_ LAG_OUT", destroy_admin_session_path, method: :delete %></div>
   <div class="sidebar__link"><a href="" style="">_ NEWS</a></div>
   <div class="sidebar__link"><a href="" style="">_ プロフィールを見る</a></div><br>
+  <%
+=begin%>
+ <div class="sidebar__link">
+    <form id="form1" action="自分のサイトURL" method="get">
+    <input id="sbox1" id="s" name="s" type="text" placeholder="キーワードを入力" />
+    <input id="sbtn1" class="form-btn pushright" type="submit" value="検索" /></form>
+  </div> 
+<%
+=end%>
   <div class="sidebar__link">> 画像一覧</div>
   <div class="sidebar-image">
     <% @posts.each do |post| %>
@@ -29,7 +39,7 @@
   </div>
   <div class="sidebar__contant">
     タグで検索
-    <%= form_tag root_path, method: :get, class: 'posts__searchForm',style: 'margin-bottom: 5px;' do %>
+    <%= form_tag admin_posts_path, method: :get, class: 'posts__searchForm',style: 'margin-bottom: 5px;' do %>
       <%= select_tag :tag_id,
                   options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
                   {
@@ -44,7 +54,7 @@
     <span>ジャンル一覧</span>
 		<% @genres.each do |genre| %>
 				<!-- クリックされたジャンルのgenre_idをparamsデータとして送信 -->
-				<%= form_with url: root_path, method: :get, local: true do |f| %>
+				<%= form_with url: admin_posts_path, method: :get, local: true do |f| %>
 					<%= f.hidden_field :genre_id, :value => genre.id %>
 					<span>・</span><%= f.submit genre.name,style:"background-color: white;
 						border:0px solid black; cursor: pointer;" %>
