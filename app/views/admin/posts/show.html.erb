@@ -21,11 +21,22 @@
           <p class="badge badge-secondary" style="padding: 5px;">#<%= tag.name %></p>
         <% end %>
         </p>
-
-        <%= link_to edit_admin_post_path(params[:id]) do %>
-          <span class="btn btn-outline-success" ,style="">編集</span>
+        <div class="card-content">
+          <div class="content average-score">
+            <div class="star-rating mb-2">
+              <div class="star-rating-front" style="width:">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+            <div class="average-score-display ml-3 pt-2">
+            </div>
+          </div>
+        </div>
+        <% if admin_signed_in? %>
+          <%= link_to edit_admin_post_path(params[:id]) do %>
+            <span class="btn btn-outline-success" ,style="">編集</span>
+          <% end %>
+          <%= link_to "削除する",admin_post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},class: "btn btn-outline-danger" %>
         <% end %>
-        <%= link_to "削除する",admin_post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},class: "btn btn-outline-danger" %>
       </div>
     </div>
     <div class="col-lg-3">

@@ -10,6 +10,11 @@
     <i class="fab fa-facebook"></i>
   </ul><br>
   <div class="sidebar__link"><a href="/" style="">> HOME</a></div>
+  <% if user_signed_in? %>
+    <div class="sidebar__link"><%= link_to "> LOG_OUT", destroy_user_session_path, method: :delete %></div>
+  <% else %>
+    <div class="sidebar__link"><a href="/users/sign_in" style="">> LOGIN</a></div>
+  <% end %>
   <div class="sidebar__link"><a href="" style="">> NEWS</a></div>
   <div class="sidebar__link"><a href="" style="">> プロフィールを見る</a></div><br>
   <%

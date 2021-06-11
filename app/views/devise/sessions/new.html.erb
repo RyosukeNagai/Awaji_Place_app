@@ -1,0 +1,54 @@
+<div class="login">
+  <div class="login__title">
+    <h2>Log _in</h2>
+  </div>
+  <p>Log_in済のUser様はこちらからLog_inして下さい。</p>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <div class="login__label">
+      <%= f.label :name %>
+    </div>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ニックネーム", class: "login__label__field" %>
+  </div>
+
+  <div class="field">
+    <div class="login__label">
+      <%= f.label :email %>
+    </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Eメール", class: "login__label__field" %>
+  </div>
+
+  <div class="field">
+    <div class="login__labels">
+      <%= f.label :password %>
+    </div>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "login__label__field" %>
+  </div>
+
+  <%
+=begin%>
+ <% if devise_mapping.rememberable? %>
+  <div class="field">
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+  </div>
+  <% end %> 
+<%
+=end%>
+
+  <div class="actions">
+    <%= f.submit "Login", class:"btns btn-outline-dark btn"%>
+  </div>
+  <% end %>
+
+  <div style="margin-top: 20px;">
+    <p>登録がまだなUser様は<%= link_to "こちら",new_user_registration_path %>から登録お願いします。</p>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <p>オーナー様は<%= link_to "こちら",new_admin_session_path %>からLog_inして下さい。</p>
+  </div>
+  <%= render "admins/shared/links" %>
+</div>
+

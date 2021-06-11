@@ -1,0 +1,45 @@
+<div class="login">
+  <div class="login__title">
+    <h2>Sing_up</h2>
+  </div>
+  <p>こちらのformより登録して下さい。</p>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <div class="login__label">
+        <%= f.label :name %>
+      </div>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ニックネーム", class: "login__label__field" %>
+    </div>
+
+    <div class="field">
+      <div class="login__label">
+        <%= f.label :email %>
+      </div>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "◯◯@◯◯.com", class: "login__label__field" %>
+    </div>
+
+    <div class="field">
+      <div class="login__labels">
+        <%= f.label :password %>
+      </div>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上の半角英数字", class: "login__label__field" %>
+    </div>
+
+    <div class="field">
+      <div class="login__labels">
+        <%= f.label :password %>
+      </div>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用", class: "login__label__field" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up",class:"btns btn-outline-dark btn" %>
+    </div>
+  <% end %>
+  <div style="margin-top: 20px;">
+    <p>登録がお済みのUser様は<%= link_to "こちら",new_user_session_path %>からLog_inして下さい。</p>
+  </div>
+</div>
