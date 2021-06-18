@@ -21,6 +21,20 @@
           <p class="badge badge-secondary" style="padding: 5px;">#<%= tag.name %></p>
         <% end %>
         </p>
+
+        <div class="review-content">
+          <div class="content average-score">
+            <div class="star-rating mb-2">
+              <div class="star-rating-front" style="width:<%= @post.review_score_percentage %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+            <div class="average-score-display ml-3 pt-2">
+              <%= @post.avg_score %>点（<%= @post.reviews.count %>件のレビュー）
+            </div>
+          </div>
+        </div>
+        <%= render 'reviews/form', review: @review, post: @post %>
+
       </div>
     </div>
     <div class="col-lg-3">

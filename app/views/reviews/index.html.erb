@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <p class="reviw-title">レビューページ</p>
+  <p class="reviw-titles">
+    <%= link_to "#{@post.title}",post_path(@post) %>
+  </p>
+  <div class="review-image">
+    <%= attachment_image_tag @post, :image, fallback:"no_image.JPG",size:'300x300', class:"product-show" %>
+  </div>
+
+  <div class="card-content">
+    <div class="content average-score">
+      <div class="star-rating mb-2">
+        <div class="star-rating-front" style="width:<%= @post.review_score_percentage %>%">★★★★★</div>
+        <div class="star-rating-back">★★★★★</div>
+      </div>
+      <div class="average-score-display ml-3 pt-2">
+        <%= @post.avg_score %>点（<%= @post.reviews.count %>件のレビュー）
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table has-text-centered">
+        <thead class="thead-dark">
+          <tr>
+            <th>ユーザー</th>
+            <th>点数</th>
+            <th>内容</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @reviews.each do |review| %>
+          <tr>
+            <td><%= review.user.name %></td>
+            <td><%= review.score %></td>
+            <td><%= review.content %></td>
+            <% if review.user == current_user %>
+              <td><%= link_to "削除する",post_review_path(review.post, review), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class:"",
+                        style:"" %>
+              </td>
+            <% end %>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

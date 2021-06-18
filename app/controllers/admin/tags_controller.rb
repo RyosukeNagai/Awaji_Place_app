@@ -7,7 +7,7 @@ class Admin::TagsController < ApplicationController
   def create
     @tag = Tag.new(tag_params)
     @tag.save
-    redirect_to admin_tags_path
+    redirect_to admin_tags_path, notice: 'tagの作成に成功しました。'
   end
 
   def edit

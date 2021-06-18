@@ -6,7 +6,7 @@ class Admin::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to admin_posts_path(@post)
+      redirect_to admin_posts_path(@post), notice: '投稿に成功しました。'
     else
       render :new
    end

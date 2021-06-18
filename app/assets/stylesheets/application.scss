@@ -153,6 +153,49 @@
       }
     }
   }
+  //post-editページ
+  .admin-posts-new {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    & h2 {
+      margin: 30px;
+    }
+    &__title {
+      & p {
+        margin-left: 0%;
+        font-size: 16px;
+        font-weight: 600;
+        padding-top: 10px;
+        margin-bottom: 5px;
+        & span {
+          background-color: red;
+          color: white;
+          font-weight: 500;
+          padding: 5px;
+          font-size: 12px;
+        }
+      }
+    }
+    &__form {
+      padding: 10px;
+      margin-right: 0%;
+    }
+    &__forms {
+      padding: 10px 20px 150px 20px;
+      margin-right: 0%;
+    }
+  }
+  .genre-form {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .form-check-label {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
   //post-showページ
   .posts-show {
     width: 100%;
@@ -178,5 +221,77 @@
     &__shop {
       margin: 10px;
     }
+  }
+  .review-content {
+    margin-top: 20px;
+  }
+  .star-rating {
+    position: relative;
+    width: 5em;
+    height: 1em;
+    font-size: 25px;
+  }
+  .star-rating-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #ffcc33;
+  }
+  .star-rating-back {
+    color: #ccc;
+  }
+  .content {
+    margin-left: 5%;
+  }
+  .average-score {
+    display: flex;
+  }
+  .average-score-display {
+    font-size: 16px;
+  }
+  .rating-box .ratings .fa{
+    font-size: 20px;
+    color:#ffcc00;
+    cursor: pointer;
+  }
+  
+  .main-rating {
+    display: flex;
+    margin-left: 25%;
+  }
+  .review-form {
+    margin-left: 0%;
+  }
+  
+  .rating-value-display {
+    font-size: 18px;
+  }
+  .reviw-title {
+    margin-top: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .reviw-titles {
+    margin-top: 20px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Caveat', cursive;
+  }
+  .review-image {
+    text-align: center;
+    margin: 20px 0%;
+  }
+  .button {
+    padding: 0px;
+    border-radius: 5%;
+  }
+  .textarea {
+    padding: 0px;
+  }
+  .card-content {
+    margin-left: 0%;
+    margin-bottom: 20px;
   }
 }

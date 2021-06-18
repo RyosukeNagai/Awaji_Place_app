@@ -14,7 +14,6 @@
 //= require activestorage
 //= require jquery
 //= require bootstrap-sprockets
-//= require_tree .
 $(function() { 
   $('#post_image').on('change', function (e) {
   var reader = new FileReader();

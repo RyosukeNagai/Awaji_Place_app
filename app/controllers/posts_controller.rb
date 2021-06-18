@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:show]
   def index
     @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
     @posts = @posts.page(params[:page]).per(10).order(created_at: :desc)
@@ -20,6 +20,6 @@ class PostsController < ApplicationController
     @posts = Post.all.order(created_at: :desc)
     @post = Post.find(params[:id])
     @genres = Genre.all
+    @review = Review.new
   end
-  
 end
