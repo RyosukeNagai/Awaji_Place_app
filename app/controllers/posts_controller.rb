@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
     @posts = @posts.page(params[:page]).per(10).order(created_at: :desc)
     @genres = Genre.all
+    @rank_posts = Post.order(impressions_count: 'DESC')
     # urlにcategory_id(params)がある場合
     if params[:genre_id]
       # Categoryのデータベースのテーブルから一致するidを取得
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
   def show
     @posts = Post.all.order(created_at: :desc)
     @post = Post.find(params[:id])
+    impressionist(@post, nil, unique: [:ip_address])
     @genres = Genre.all
     @review = Review.new
   end

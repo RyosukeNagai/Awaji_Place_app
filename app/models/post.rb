@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  
+  is_impressionable counter_cache: true
   attachment :image
   has_many :post_tag_relations, dependent: :delete_all
   has_many :tags, through: :post_tag_relations
