@@ -61,14 +61,14 @@
   }
 }
 .bg {
-  background-image: image-url(bg.JPG);
+  background-image: url(bg.JPG);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 .ad-bg {
-  background-image: image-url(ad-bg.JPG);
+  background-image: url(ad-bg.JPG);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -207,7 +207,7 @@
 //top header
 header {
   height: 100vh;
-  background-image: image-url(top.JPG);
+  background-image: url(top.JPG);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
