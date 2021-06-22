@@ -66,15 +66,15 @@
   </div>
   <div class="sidebar__contant">
     最新の記事
-  </div>
-  <% @posts.each do |post| %>
-  <div class="sidebar__article">
-    <!-- 4つごとに折り返し-->
-    <%= link_to post_path(post) do %>
-    <p><%= post.title %></p>
-    <p><%= post.created_at.strftime('%Y年/%m月/%d日') %></p>
-    <% end %>
-    <div style="margin-bottom: 5px;"></div>
+    <% @posts.each do |post| %>
+      <div class="sidebar__article">
+      <!-- 4つごとに折り返し-->
+      <%= link_to post_path(post) do %>
+        <p><%= post.title %></p>
+        <p><%= post.created_at.strftime('%Y年/%m月/%d日') %></p>
+      <% end %>
+      <div style="margin-bottom: 5px;"></div>
+      </div>
     <% end %>
   </div>
   <div class="footer">
