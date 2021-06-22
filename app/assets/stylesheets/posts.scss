@@ -295,10 +295,12 @@ header {
   margin: 0 auto;
   color: #eee;
   & h4 {
-    font-size: 16px;
+    font-size: 18px;
+    padding: 5px 5px 0px 5px;
   }
   & p {
-   font-size: 10px;
+   font-size: 12px;
+   padding: 5px 5px 0px 5px;
   }
 }
 .footer {
