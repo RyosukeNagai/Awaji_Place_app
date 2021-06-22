@@ -24,7 +24,7 @@
     <div class="review-form">
       <%= f.hidden_field :post_id, value: post.id %>
       <%= f.hidden_field :score, id: "rating-value" %>
-      <%= f.text_field :content, class: "textarea" %>
+      <%= f.text_field :content, class: "textarea", placeholder: "コメントの入力" %>
       <%= f.submit "保存", class: "button btn-info" %>
       <p><%= link_to "他のレビューを見る", post_reviews_path(post), class: "button light ml-1 mt-1" %>
       <% end %></p>
