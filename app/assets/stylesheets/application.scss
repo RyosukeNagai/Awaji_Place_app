@@ -98,6 +98,7 @@
   //top header
   header {
     width: 100%;
+    z-index:-1;
   }
   .bg_rgba {
     & h1 {
