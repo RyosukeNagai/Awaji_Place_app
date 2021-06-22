@@ -13,7 +13,7 @@
         </div>
         <p class="posts-show__created"><b>営業時間: </b><%= @post.business_hours %></p>
         <p class="posts-show__created"><b>住所: </b><%= @post.address %></p>
-        <p class="posts-show__created"><b>URL: </b><%= @post.url %></p>
+        <p class="posts-show__created"><b>URL: </b><%= text_url_to_link(h(@post.url)).html_safe %></p>
         <p class="posts-show__titles">Genre　</p><p class="badge badge-warning" style="padding: 5px;"><%= @post.genre.name %></p>
         <p></p>
         <p class="posts-show__titles">Tags　</p>
