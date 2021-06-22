@@ -294,6 +294,12 @@ header {
   width: 80%;
   margin: 0 auto;
   color: #eee;
+  & h4 {
+    padding: 10px 10px 0px 10px;
+  }
+  & p {
+    padding: 10px;
+  }
 }
 .footer {
   margin-top: 30px;
