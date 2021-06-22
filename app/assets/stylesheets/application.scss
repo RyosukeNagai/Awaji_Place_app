@@ -19,6 +19,7 @@
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  margin-top: 50px;
   & p {
     font-size: 12px;
     margin-bottom: 20px;
@@ -62,6 +63,10 @@
     margin-right: 5px;
   }
 }
+.error {
+  background-color: #FFE4E1;
+  margin: 10px;
+}
 .btn {
   margin: 10px;
   padding: 10px;
@@ -96,6 +101,18 @@
 //レスポンシブ(スマホ)
 @media only screen and (max-width: 768px) {
   //top header
+  #error_explanation {
+    & h2 {
+      font-size: 20px;
+    }
+  }
+  .login {
+    margin-top: 0px;
+  }
+  .error {
+    background-color: #FFE4E1;
+    margin: 10px;
+  }
   header {
   }
   .bg_rgba {

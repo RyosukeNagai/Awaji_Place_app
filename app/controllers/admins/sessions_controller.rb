@@ -5,6 +5,10 @@ class Admins::SessionsController < Devise::SessionsController
     admin_posts_path
    end
 
+  def after_sign_up_path_for(resource)
+    admin_posts_path
+  end
+
   def after_sign_out_path_for(resource)
     admin_session_path
   end
