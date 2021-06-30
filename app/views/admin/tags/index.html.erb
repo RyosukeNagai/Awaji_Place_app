@@ -29,7 +29,7 @@
             <td class=""><%= tag.id %></td>
             <td class=""><%= tag.name %></td>
             <td><%= link_to "編集する", edit_admin_tag_path(tag) ,class:"btns btn-outline-success" %></td>
-            <td><%= link_to "削除する", admin_tag_path(tag) ,class:"btns btn-outline-danger" %></td>
+            <td><%= link_to "削除する", admin_tag_path(tag) , method: :delete,class:"btns btn-outline-danger" %></td>
           </tr>
           <% end %>
         </tbody>
