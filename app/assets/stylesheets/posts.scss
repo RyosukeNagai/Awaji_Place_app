@@ -41,12 +41,12 @@
   padding: 2px;
 }
 .boards__searchForm {
-	display: inline-block;
+  display: inline-block;
 }
-  
+
 .boards__select {
-	display: inline-block;
-	width: auto;
+  display: inline-block;
+  width: auto;
 }
 .preview {
   margin: 15px;
@@ -62,7 +62,7 @@
   }
 }
 .bg {
-  background-image: url(bg.JPG);
+  background-image: url(bg1.JPG);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,41 +82,49 @@
 //   font-size: 10px;
 //   margin: 1px;
 // }
-.posts{
-	display: flex;
+.posts {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  & p {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+  &__title {
+    color: black;
     margin: 0;
     width: 250px;
     font-weight: 600;
-    font-size: 20px;
-    padding: 5px 0px 5px 10px;
+    font-size: 23px;
+    padding: 5px 0px 0px 10px;
     margin-top: 20px;
   }
-  & span {
+  & p {
     color: black;
-    font-size: 16px;
+    font-size: 14px;
     padding: 0 5px 2px 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #eee;
+    color: black;
+    font-weight: 600;
   }
-  &__content{
-    width: 48%;
+  &__content {
+    width: 32%;
     margin-left: 1%;
   }
-  &__image{
-    height: 300px;
+  &__image {
+    height: 250px;
     width: 100%;
     margin-top: 5px;
   }
 }
-.posts__image.zoom{
-  transform: scale(0.9,0.9);
-  transition-duration: 0.5s;
+.posts-count {
+  text-align: right;
+  font-weight: 600;
+  font-family: 'Caveat', cursive;
+  & p {
+    display: inline-block;
+    font-size: 50px;
   }
+}
+.posts__image.zoom {
+  transform: scale(0.9, 0.9);
+  transition-duration: 0.5s;
+}
 .top-image {
   width: 50px;
   height: 50px;
@@ -124,7 +132,7 @@
 //sidebar
 .sidebar {
   margin-top: 20px;
-  border: 1px solid #A9A9A9;
+  border: 1px solid #a9a9a9;
   padding-bottom: 50px;
   background-color: rgba(255, 255, 255, 0.7);
   & p {
@@ -151,55 +159,59 @@
   }
   .fa-twitter {
     color: dodgerblue;
-    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
     font-size: 1.5rem;
     border-radius: 40px;
   }
   .fa-facebook {
     color: rgb(10, 82, 154);
-    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
     font-size: 1.6rem;
     border-radius: 40px;
   }
   .fa-instagram-square {
-  border-radius: 40px;
-  color: #fff;
-  background: #d6249f;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
-  font-size: 1.5rem;
+    border-radius: 40px;
+    color: #fff;
+    background: #d6249f;
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+    font-size: 1.5rem;
   }
   &__article {
     & p {
       padding: 0px;
       font-size: 12px;
-      padding-left: 10px;
-    }
+      padding-left: 5px;
     }
   }
-.sidebar-image{
-	display: flex;
+}
+.sidebar-image {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 10px;
   margin: 5px;
-  &__contant{
+  &__contant {
     width: 48%;
     margin-left: 1%;
     margin-right: 1%;
   }
-  &__img{
+  &__img {
     height: 80px;
     width: 100%;
     margin-top: 5px;
   }
 }
-.product-show{
-	width: 90%;
-	height: 450px;
-}
-.posts-show {
-  text-align: center;
+.product-show {
+  width: 90%;
+  height: 500px;
 }
 .posts-show__title {
   display: inline-block;
@@ -219,17 +231,17 @@ header {
 //   // clip-path: poligon(0 0, 100% 10%, 100% 90%, 0 100%);
 // }
 header::before {
-  content:"";
-  display:block;
-  position:fixed;
-  z-index:-1;
-  width:100%;
-  height:100vh;
-  background-repeat:no-repeat;
-  background-position:center center;
-  background-image:url(top.JPG);
-  background-size:cover;
-  }
+  content: "";
+  display: block;
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(top.JPG);
+  background-size: cover;
+}
 .bg_rgba {
   height: 100%;
   background: rgba(0, 0, 0, 0.1);
@@ -238,14 +250,14 @@ header::before {
     text-align: center;
     padding-top: 20%;
     font-size: 70px;
-    font-family: 'Caveat', cursive;
+    font-family: "Caveat", cursive;
   }
   & p {
     color: white;
     text-align: center;
     margin-top: 10px;
     margin: 10px 22% 0px 22%;
-    font-family: 'Caveat', cursive;
+    font-family: "Caveat", cursive;
     font-size: 25px;
     border-bottom: 1px solid white;
   }
@@ -265,7 +277,7 @@ header::before {
   -ms-writing-mode: tb-lr;
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
 }
 .scrolldown:before {
   content: "";
@@ -275,22 +287,31 @@ header::before {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color:white;
-  animation: 
-            circlemove 1.6s ease-in-out
-            infinite,
-            circlemovehide 1.6s ease-out
-            infinite;
+  background-color: white;
+  animation: circlemove 1.6s ease-in-out infinite,
+    circlemovehide 1.6s ease-out infinite;
 }
 @keyframes circlemove {
-  0%{bottom: 70px;}
-  100%{bottom: -5px;}
+  0% {
+    bottom: 70px;
+  }
+  100% {
+    bottom: -5px;
+  }
 }
 @keyframes circlemovehide {
-  0%{opacity: 0;}
-  50%{opacity: 1;}
-  80%{opacity: 0.9;}
-  100%{opacity: 0;}
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .scrolldown:after {
   content: "";
@@ -303,7 +324,7 @@ header::before {
 }
 .footer-bg {
   background-color: rgba(30, 144, 255, 0.7);
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   text-align: center;
   padding: 10px;
   border-radius: 50%;
@@ -315,8 +336,8 @@ header::before {
     padding: 5px 5px 0px 5px;
   }
   & p {
-   font-size: 12px;
-   padding: 5px 5px 5px 5px;
+    font-size: 12px;
+    padding: 5px 5px 5px 5px;
   }
 }
 .footer {
@@ -324,16 +345,17 @@ header::before {
   margin-bottom: 50px;
 }
 .genre-name {
-  display: inline;
+  display: inline-block;
   background-color: rgba(0, 191, 255, 0.8);
   padding: 1px 5px;
   font-weight: 600;
   font-size: 14px;
   border-radius: 20%;
-  margin-left: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 .impression-name {
-  display: inline;
+  display: inline-block;
   background-color: rgba(255, 165, 0, 0.8);
   padding: 1px 5px;
   font-weight: 600;
@@ -342,7 +364,7 @@ header::before {
   margin-left: 10px;
 }
 #news {
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
   margin-top: 20px;
@@ -378,34 +400,45 @@ header::before {
 //post-showページ
 .posts-show {
   width: 80%;
-  margin: 50px 10%;
+  margin: 10px 10%;
+  text-align: center;
   &__title {
     font-size: 25px;
     border-bottom: 1px solid black;
     font-weight: 600;
+    margin: 10px 0px;
   }
   &__titles {
     display: inline-block;
     font-weight: 600;
+    margin-top: 10px;
   }
   &__created {
     margin: 5px;
+    line-height: 50px;
+    width: auto;
+    border-bottom: 1px solid rgb(190, 188, 188);
+    width: 80%;
+    margin: 0 auto;
   }
   &__image {
     margin: 2%;
   }
   &__body {
     width: 70%;
-    margin:  0 15%;
+    margin: 0 15%;
     font-size: 16px;
     font-weight: 600;
     line-height: 2;
   }
   &__shop {
-    margin: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(190, 188, 188);
+    width: 80%;
+    margin: 0 auto;
     & span {
       font-weight: 600;
-      font-size: 16px;  
+      font-size: 16px;
     }
   }
 }

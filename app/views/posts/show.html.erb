@@ -2,11 +2,15 @@
   <div class="row">
     <div class="col-lg-9">
       <div class="posts-show">
-        <p class="posts-show__title"><%= @post.title %></p>
-        <p class="posts-show__created"><%= @post.created_at.strftime('%Y年/%m月/%d日') %></p>
         <div class="posts-show__image">
           <%= attachment_image_tag @post, :image, fallback:"no_image.JPG",size:'300x300', class:"product-show" %>
         </div>
+        <p class="posts-show__title"><%= @post.title %></p>
+        <%
+=begin%>
+ <p class="posts-show__created"><%= @post.created_at.strftime('%Y-%m-%d') %></p> 
+<%
+=end%>
         <div class="posts-show__body"><%= @post.body %></div><br>
         <div class="posts-show__shop">
           <span><　</span><span><%= @post.shop_name %></span><span>　></span>
@@ -14,11 +18,10 @@
         <p class="posts-show__created"><b>営業時間: </b><%= @post.business_hours %></p>
         <p class="posts-show__created"><b>住所: </b><%= @post.address %></p>
         <p class="posts-show__created"><b>URL: </b><%= text_url_to_link(h(@post.url)).html_safe %></p>
-        <p class="posts-show__titles">Genre　</p><p class="badge badge-warning" style="padding: 5px;"><%= @post.genre.name %></p>
-        <p></p>
-        <p class="posts-show__titles">Tags　</p>
+        <p class="posts-show__titles"></p><p class="badge badge-warning" style="padding: 5px;margin-top:10px;"><%= @post.genre.name %></p>
+        <p class="posts-show__titles"></p>
         <% @post.tags.each do |tag| %>
-          <p class="badge badge-secondary" style="padding: 5px;">#<%= tag.name %></p>
+          <p class="badge badge-secondary" style="padding: 5px;margin-left: 10px;">#<%= tag.name %></p>
         <% end %>
         </p>
 
