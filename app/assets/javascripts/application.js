@@ -15,7 +15,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 $(function() { 
-  $('#post_image').on('change', function (e) {
+  $('#post_avatar').on('change', function (e) {
   var reader = new FileReader();
   reader.onload = function (e) {
       $("#preview").attr('src', e.target.result);
